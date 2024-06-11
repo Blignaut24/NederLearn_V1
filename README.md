@@ -188,6 +188,7 @@ This epic concentrates on improving the site's overall user experience, includin
 - Receive Page Error Messages (SHOULD HAVE)
 - Accessibility features for users with disabilities (SHOULD HAVE)
 - Compatibility with common screen sizes (SHOULD HAVE)
+</details>
 
 ### Sitemap
 
