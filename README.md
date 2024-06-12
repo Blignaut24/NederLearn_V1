@@ -134,7 +134,7 @@ Explain the possible bad results, risks, and problems that could happen from the
 - Access to a wide variety of Dutch language resources and the ability for users to contribute their own insights and reviews.
 
 ### MoSCoW Method
-The NederLearn app using the MoSCoW method to prioritize which features are essential and which to postponed. The method divides tasks into four categories:
+The NederLearn application uses the MoSCoW method for brainstorming and prioritizing different features. This list is flexible and the final features of the NederLearn app may differ. The MoSCoW method categorizes tasks into four distinct groups for better organization and prioritization.
 
 ![MoSCoW Method Diagram for NederLearn App](static/images/moscow_method.webp)
 
@@ -169,25 +169,24 @@ This Epic focuses on main blog features like making, reading, changing, and remo
 <summary>Epic 3: Administration & Analytics</summary>
 This section covers site management such as overseeing user accounts, regulating content, and monitoring user activity.
 
-- Admin - Full Control Over User Accounts (MUST HAVE)
-- Admin - Review and Edit User-Submitted Blog Posts (SHOULD HAVE)
-- Admin - Manage and Categorize Blog Posts (COULD HAVE)
-- Admin - Track User Engagement and Analytics (WON'T HAVE)
+- Admin - Full Control Over User Accounts [**(MUST HAVE)**](https://github.com/Blignaut24/NederLearn/issues/14)
+- Admin - Review and Edit User-Submitted Blog Posts  [**(SHOULD HAVE)**](https://github.com/Blignaut24/NederLearn/issues/15)
+- Admin - Manage and Categorize Blog Posts  [**(COULD HAVE)**](https://github.com/Blignaut24/NederLearn/issues/16)
+- Admin - Track User Engagement and Analytics [**(WON'T HAVE)**](https://github.com/Blignaut24/NederLearn/issues/17)
 
 </details>
 <details>
 <summary>Epic 4; User Experience & Accessibility</summary>
 This epic concentrates on improving the site's overall user experience, including the look of the homepage, ease of navigation, and information accessibility.
 
-- Visually Appealing Landing Page (SHOULD HAVE)
-- Navigate to About Us (SHOULD HAVE)
-- Compatibility with different devices and operating systems ( MUST HAVE)
-- Navigate to Join the Club Section (MUST HAVE)
-- Navigate through a well designed website (MUST HAVE)
-- Site pagination for easy navigation (SHOULD HAVE)
-- Receive Page Error Messages (SHOULD HAVE)
-- Accessibility features for users with disabilities (SHOULD HAVE)
-- Compatibility with common screen sizes (SHOULD HAVE)
+- Visually Appealing Landing Page [**(SHOULD HAVE)**](https://github.com/Blignaut24/NederLearn/issues/18)
+- Navigate to About Us [**(SHOULD HAVE)**](https://github.com/Blignaut24/NederLearn/issues/19)
+- Compatibility with different devices and operating systems [**(Must HAVE)**](https://github.com/Blignaut24/NederLearn/issues/20)
+- Navigate to Join the Club Section [**(Must HAVE)**](https://github.com/Blignaut24/NederLearn/issues/21)
+- Navigate through a well designed website [**(Must HAVE)**](https://github.com/Blignaut24/NederLearn/issues/22)
+- Site pagination for easy navigation [**(SHOULD HAVE)**](https://github.com/Blignaut24/NederLearn/issues/23)
+- Receive Page Error Messages [**(WON'T HAVE)**](https://github.com/Blignaut24/NederLearn/issues/24)
+
 </details>
 
 ### Sitemap

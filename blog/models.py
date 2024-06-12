@@ -6,6 +6,7 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
 
+# Blogpost Model
 class Blogpost(models.Model):
     """
     The Blogpost model in the NederLearn application signifies an individual 
@@ -44,3 +45,8 @@ class Blogpost(models.Model):
 
     def number_of_bookmarks(self):
         return self.bookmarks.count()
+
+# User_Profile Model
+# User Model
+# Comment Model
+# Category Model 
