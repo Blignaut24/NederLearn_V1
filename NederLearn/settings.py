@@ -95,8 +95,10 @@ DATABASES = {
 }
 
 
-CSRF_TRUSTED_ORIGINS = ["https://8000-blignaut24-nederlearn-87ruq8zh7xd.ws-eu114.gitpod.io/",
+CSRF_TRUSTED_ORIGINS = ["https://8000-blignaut24-nederlearn-87ruq8zh7xd.ws-eu114.gitpod.io/", 
+    "https://*.codeanyapp.com",
     "https://*.herokuapp.com"]
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
