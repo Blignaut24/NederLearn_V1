@@ -1,11 +1,10 @@
 from django.contrib import admin
-from.models import Blogpost
-from.models import MediaCategory
-from.models import UserProfile
-from.models import Comment
+from .models import Blogpost
+from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
-admin.site.register(Blogpost)
-admin.site.register(MediaCategory)
-admin.site.register(UserProfile)
-admin.site.register(Comment)
+
+@admin.register(Blogpost)
+class PostAdmin(SummernoteModelAdmin):
+
+    summernote_fields = ('content')
