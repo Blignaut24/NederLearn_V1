@@ -17,7 +17,6 @@ class Blogpost(models.Model):
     and, if relevant, the year of release. Additional features allow users to 
     'like' or 'bookmark' posts. These interactions are modeled through 
     many-to-many relationships with the User model.
-
     """
     blog_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -49,4 +48,22 @@ class Blogpost(models.Model):
 # User_Profile Model
 # User Model
 # Comment Model
+class Comment(models.Model):
+    """    
+The "Comment" model is linked to a particular blog post and its author, 
+symbolizing a comment made on that post. It stores:
+
+- The content of the comment
+- The date and time it was created
+- A boolean flag that shows whether site administrators have approved it
+    """
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+    post = models.ForeignKey('Blogpost', on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.user.username}"
+
 # Category Model 
