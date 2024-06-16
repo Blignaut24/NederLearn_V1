@@ -5,6 +5,26 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
+# MediaCategory
+class MediaCategory(models.Model):
+    """
+    The MediaCategory model organizes learning materials into 12 unique 
+    classifications, including movies, series, books, music, podcasts, 
+    and European Language levels A1 - C2. Each category is used to 
+    categorize blog posts within the NederLearn app. 
+    The 'media_name' field is unique, ensuring no category is replicated.
+    """
+    media_name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.media_name
+
+    class Meta:
+        verbose_name_plural = "Media Categories"
+
+# User_Profile Model
+class UserProfile(models.Model):
+
 
 # Blogpost Model
 class Blogpost(models.Model):
@@ -45,7 +65,10 @@ class Blogpost(models.Model):
     def number_of_bookmarks(self):
         return self.bookmarks.count()
 
-# User_Profile Model
+
+
+
+
 # User Model
 # Comment Model
 class Comment(models.Model):
