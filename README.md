@@ -190,6 +190,7 @@ This epic concentrates on improving the site's overall user experience, includin
 </details>
 
 ### Sitemap
+![NederLearn App Sitemap](static/images/site_map.webp)
 
 ### Wireflow
 
@@ -223,6 +224,47 @@ During the planning phase of the NederLearn project, I utilized  [**Whimsical**]
 ---
 
 ## Technologies Used
+
+### **Languages**
+- HTML
+- CSS
+- Python
+- JavaScript
+
+### **Frameworks**
+- **Django:** Is a high-level Python web framework that promotes rapid development and pragmatic, clean design. It adheres to the "don't repeat yourself" (DRY) principle and is built on the model-view-template architectural pattern. It was used to build the NederLearn app web app.
+- **Crispy Form:** Is a Django application that helps you manage and format your Django form output. It allows you to control form rendering in your templates while keeping boilerplate to a minimum. It supports different form styles and integrates seamlessly with Bootstrap 4 and up.
+- **Boostrap v5.0:** Bootstrap is a free tool that helps you build websites that look good on both desktop and mobile. It has templates for different parts of a website, which can save developers time and effort.
+
+### **Database**
+- **ElephantSQL:** Is a service that takes care of all the complex stuff related to managing a PostgreSQL database.
+
+## **Media Management Platform**
+- **Cloudinary:** This is a cloud-based platform that facilitates the storage, management, and delivery of media for the NederLearn app. It specifically handles image management for the project.
+
+## **Tools:**
+- **Font Awesome:** Is a collection of free, changeable vector icons you can use on a website.
+- **Git:**  A platform that holds and manages Git repositories, making it easy to work together and keep track of different versions of the project's code.
+- **GitHub:** Is a web-based platform that provides hosting for software development and version control using Git.
+- **Gitpod:** Is an  online IDE platform that lets you easily create software straight from your web browser.
+- **Google Fonts:** A library of free, open-source fonts, used to enhance typography on the website.
+- **Heroku:**  A cloud application platform used for deploying and hosting the NederLearn app.
+- **Notion AI:** Is an artificial intelligence tool designed to assist with note-taking, data management, and organization within the Notion platform. It aids in planning and writing the NederLearn app README document.
+- **Whimsical:** Is a collaborative visual workspace used for brainstorming, designing, and coordinating team efforts. It has been utilized to design visual diagrams, create flowcharts, wireframes, and sticky notes for the NederLearn app, enhancing the app's conceptualization and planning process.
+
+## **Supporting Libraries and Packages**
+- `asgiref==3.7.2`: This package allows your Python web application to handle multiple requests at the same time. 
+- `cloudinary==1.37.0`: This helps your application to manage images and videos in the cloud.
+- `dj-database-url==0.5.0`: This simplifies the process of connecting your Django application to a database.
+- `dj3-cloudinary-storage==0.0.6`: This is used to store and manage your Django application's files in the cloud using Cloudinary.
+- `Django==4.2.1`: Django is a high-level Python web framework that helps you build web applications quickly.
+- `gunicorn==21.2.0`: This is a server that runs your web application. 
+- `psycopg2==2.9.9`: This package allows your Django application to interact with PostgreSQL database.
+- `pytz==2023.3.post1`: This helps you handle different time zones in your Python applications. 
+- `sqlparse==0.4.4`: This is a library that helps you parse SQL queries.
+- `urllib3==1.26.15`: This package allows your application to send HTTP requests.
+
+
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
