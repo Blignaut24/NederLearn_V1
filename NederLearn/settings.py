@@ -31,7 +31,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "8000-blignaut24-nederlearn-87ruq8zh7xd.ws-eu114.gitpod.io",
-    ".herokuapp.com"
+    ".herokuapp.com",
+    "neder-learn-e6e5e91a4e1f.herokuapp.com",
+    "localhost"
     ]
 
 
