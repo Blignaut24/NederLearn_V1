@@ -22,21 +22,14 @@ class MediaCategory(models.Model):
     class Meta:
         verbose_name_plural = "Media Categories"
 
-# User_Profile Model
-class UserProfile(models.Model):
-
-
 # Blogpost Model
 class Blogpost(models.Model):
     """
-    The Blogpost model in the NederLearn application signifies an individual 
-    blog post. It encapsulates details such as the post's title, slug, author, 
-    creation and update times, main content, a short excerpt, and the status 
-    of the post (whether it's a draft or published). 
-    It also includes an image for the post, the media category it falls under, 
-    and, if relevant, the year of release. Additional features allow users to 
-    'like' or 'bookmark' posts. These interactions are modeled through 
-    many-to-many relationships with the User model.
+    The Blogpost model in the NederLearn application captures details like 
+    title, author, creation and update times, and content. It also indicates 
+    the post's status (draft or published), includes an image, media category, 
+    and year of release, and features 'like' and 'bookmark' options for user 
+    engagement and reference.
     """
     blog_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -65,9 +58,32 @@ class Blogpost(models.Model):
     def number_of_bookmarks(self):
         return self.bookmarks.count()
 
+# User_Profile Model
+class UserProfile(models.Model):
+    """
+    The UserProfile model is used to collect additional information 
+    about the user that isn't included in the basic User model. 
+    By having a separate UserProfile model, we can keep the User model 
+    (which handles authentication) simpler and more focused, while still 
+    being able to store and retrieve more detailed information about our users. 
+    This information, such as profile picture, location, first language, and 
+    learning goals, can help in personalizing the user's experience and can 
+    provide valuable context for certain functionalities in the app.
+    
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_image = CloudinaryField('image', default='placeholder')
+    bio = models.TextField(blank=True)
+    country = models.CharField(max_length=100, blank=True)
+    top_movies = models.CharField(max_length=255, blank=True)
+    top_series = models.CharField(max_length=255, blank=True)
+    top_music_albums = models.CharField(max_length=255, blank=True)
+    top_books = models.CharField(max_length=255, blank=True)
+    top_podcasts = models.CharField(max_length=255, blank=True)
+    top_miscellaneous = models.CharField(max_length=255, blank=True)
 
-
-
+    def __str__(self):
+        return self.user.username
 
 # User Model
 # Comment Model
