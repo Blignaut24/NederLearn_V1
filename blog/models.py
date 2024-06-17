@@ -1,6 +1,25 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
+
+current_year = timezone.now().year
+
+
+def validate_year(value):
+    """
+    A check is made to ensure the 'release year' is between 1800 and 
+    the current year. If the year doesn't fit within this range, an 
+    error message will appear.
+    """
+    current_year = timezone.now().year
+    if not (1800 <= value <= current_year):
+        raise ValidationError(
+            _("Please enter a year between 1800 and %(current_year)s"),
+            params={'current_year': current_year},
+        )
 
 # Create your models here.
 STATUS = ((0, 'Draft'), (1, 'Published'))
@@ -33,17 +52,27 @@ class Blogpost(models.Model):
     """
     blog_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='blog_posts'
+    )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
-    excerpt = models.TextField(blank=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    featured_image = CloudinaryField('image', default='placeholder')
-    media_category = models.ForeignKey('MediaCategory', on_delete=models.SET_NULL, related_name='blog_posts', blank=True, null=True) #TODO: Set it as optional for now, but don't forget to revert it back to required later.
+    content = models.TextField(max_length=10000)
+    excerpt = models.TextField(max_length=70, blank=True)
+    status = models.IntegerField(choices=STATUS, default=1)
+    featured_image = CloudinaryField('image', default='blogpost_placeholder')
+    media_category = models.ForeignKey(
+        'MediaCategory', on_delete=models.SET_NULL,
+        related_name='blog_posts', null=True, blank=False
+    )
+    release_year = models.IntegerField(validators=[validate_year])
     media_link = models.URLField()
-    likes = models.ManyToManyField(User, related_name='blogpost_likes', blank=True)
-    bookmarks = models.ManyToManyField(User, related_name='blogpost_bookmarks', blank=True)
+    likes = models.ManyToManyField(
+        User, related_name='blogpost_likes', blank=True
+    )
+    bookmarks = models.ManyToManyField(
+        User, related_name='blogpost_bookmarks', blank=True
+    )
 
     class Meta:
         ordering = ['-created_on']
@@ -102,6 +131,6 @@ symbolizing a comment made on that post. It stores:
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Comment {self.body} by {self.user.username}"
+        return f"{self.id} by {self.user.username}"
 
 # Category Model 
