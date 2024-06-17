@@ -10,5 +10,5 @@ from django.urls import path
 # Each URL pattern is defined and assigned to a specific view function or class-based view.
 # In this case, the root URL (empty string) is assigned to the PostList class-based view.
 urlpatterns = [
-    path("", views.PostList.as_view(), name="home"),
+    path("", views.BlogPostList.as_view(), name="home"),
 ]
