@@ -70,7 +70,7 @@ class Blogpost(models.Model):
         related_name='blog_posts', null=True, blank=False
     )
     # release_year = models.IntegerField(validators=[validate_year])
-    release_year = models.IntegerField(validators=[validate_year], default=current_year) # NOTE:Possible migration fix added  "default=current_year"
+    release_year = models.IntegerField(validators=[validate_year], blank = True) # NOTE:Possible migration fix added  "default=current_year"
     media_link = models.URLField()
     likes = models.ManyToManyField(
         User, related_name='blogpost_likes', blank=True
