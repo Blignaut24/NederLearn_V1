@@ -50,14 +50,14 @@ Here is a list of the services that the NederLearn app provides to its users:
 - The selected resource material is carefully curated.
 - It offers a summary and an external link to the content.
 - Users can choose from a variety of media formats: books, movies, music, podcasts, and series.
-- Resources can be organized according to the European Framework for Language Framework Levels:
-    - A. Basic Speaker
+- Resources can be organized according to the Common European Framework of Reference (CEFR):
+    - A. Beginners Level
         - A1. Beginner
         - A2. Elementary
-    - B. Independent Speaker
+    - B. Intermediate Level
         - B1. Intermediate
         - B2. Upper Intermediate
-    - C. Proficient Speaker
+    - C. Advanced Level
         - C1. Advanced
         - C2. Expert
 

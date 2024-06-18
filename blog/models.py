@@ -61,16 +61,16 @@ class Blogpost(models.Model):
     )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField(max_length=10000)
-    excerpt = models.TextField(max_length=70, blank=True)
+    content = models.TextField(max_length=20000)
+    excerpt = models.TextField(max_length=500, blank=True)
     status = models.IntegerField(choices=STATUS, default=1)
     featured_image = CloudinaryField('image', default='blogpost_placeholder')
     media_category = models.ForeignKey(
         'MediaCategory', on_delete=models.SET_NULL,
         related_name='blog_posts', null=True, blank=False
     )
-    # release_year = models.IntegerField(validators=[validate_year])
-    release_year = models.IntegerField(validators=[validate_year], blank=True) # NOTE:Possible migration fix added  "default=current_year"
+    #release_year = models.IntegerField(validators=[validate_year], blank=True)
+    release_year = models.IntegerField(validators=[validate_year])
     media_link = models.URLField()
     likes = models.ManyToManyField(
         User, related_name='blogpost_likes', blank=True
