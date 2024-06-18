@@ -1,34 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
+
+<!-- DOCTYPE html -->
+<html lang="h-100">
+
 <head>
-    <!-- Header -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
     <title>NederLearn</title>
+
+    <!-- Linking Google font: Roboto -->
+    <link rel="preconnect" href="<https://fonts.gstatic.com>">
+    <link href="<https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap>"
+        rel="stylesheet">
+
+    <!-- Setting viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Linking Bootstrap CSS and JS -->
+    <link href="<https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css>"
+        rel="stylesheet" crossorigin="anonymous">
+    <script src="<https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js>"
+        crossorigin="anonymous"></script>
+
+    <!-- Linking font awesome for icons -->
+    <link rel="stylesheet"
+        href="<https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css>">
+
+    <!-- Linking custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!-- User Authenticated Links -->
-            {% if user.is_authenticated %}
-            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Bookmarked</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Create New Post</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Latest Post</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">My Posts</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">My Profile</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Log Out</a></li>
-            <!-- Guest Links -->
-            {% else %}
-            <li class="nav-item"><a class="nav-link" href="#">Sign Up</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Login</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">About
-                    Us</a></li>
-            {% endif %}
-        </ul>
-    </div>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <!-- Brand name -->
+            <a class="navbar-brand" href="{% url 'home' %}">NederLearn</a>
+
+            <!-- Toggler for small screens -->
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- If user is authenticated -->
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link"
+                            href="{% url 'profile' %}">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="{% url 'create_post' %}">Create New Post</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="{% url 'my_posts' %}">My Posts</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="{% url 'saved_for_later' %}">Saved for
+                            Later</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="{% url 'about_us' %}">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="{% url 'logout' %}">Log Out</a></li>
+                    <!-- If user is not authenticated -->
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link"
+                            href="{% url 'register' %}">Join the Club</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="{% url 'about_us' %}">About Us</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="flex-shrink-0">
+        {% block content %}
+        <!-- Content goes here -->
+        {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <!-- Copyright notice -->
+            <p class="m-0">© 2024 NederLearn</p>
+
+            <!-- Social media links -->
+            <p class="m-0">
+                <a href="<https://github.com/DebbieBergstrom>" target="_blank"
+                    class="btn btn-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="<https://www.linkedin.com/in/debbie-bergstrom/>"
+                    target="_blank" class="btn btn-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </p>
+        </div>
+    </footer>
 </body>
+
 </html>

@@ -2,7 +2,8 @@
 * Google Font Imports
 * Importing different fonts from Google Fonts for use throughout the website.
 */
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 /*
 * Root Styles
@@ -10,6 +11,10 @@
 */
 :root {
     /* fonts */
+    --font-primary: "EB Garamond", serif;
+    --font-secondary: "Quattrocento Sans", serif;
+    --font-tertiary: "Playfair Display", serif;
+    --font-quaternary: "Fira Sans", serif;
 
     /* color*/
     --primary-color: #F8F8FF;
@@ -23,7 +28,7 @@
 
 /* --- BODY --- */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-primary);
     background-image: linear-gradient(to right bottom, #01030b, #081118, #091a22, #05232a, #012c30);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -33,7 +38,7 @@ body {
 }
 
 h1 {
-    font-family: 'Russo One', sans-serif;
+    font-family: var(--font-secondary);
     font-weight: 400;
 }
 
@@ -65,7 +70,7 @@ h3 {
 }
 
 .navbar-logo {
-    font-family: 'Russo One', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--accent-color);
@@ -466,7 +471,7 @@ textarea {
 }
 
 .top-categories-heading {
-    font-family: 'Russo One', sans-serif;
+    font-family: var(--font-secondary);
     color: var(--secondary-color);
     text-align: center;
     font-weight: bolder;
@@ -520,8 +525,7 @@ textarea {
 }
 
 .login-culture-club {
-    font-family: 'Russo One',
-        sans-serif;
+    font-family: var(--font-secondary);
     font-size: 57px;
     font-weight: 700;
     color: var(--accent-color);
