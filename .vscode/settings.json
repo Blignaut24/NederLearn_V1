@@ -15,4 +15,5 @@
    "files.autoSave": "off",
    "workbench.colorTheme": "Winter is Coming (Dark Blue)",
    "terminal.integrated.gpuAcceleration": "canvas",
+   "liveServer.settings.port": 5501,
 }

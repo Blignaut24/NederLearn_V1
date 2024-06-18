@@ -18,23 +18,21 @@
 
     /* color*/
     --primary-color: #F8F8FF;
+    /*backround color*/
     --secondary-color: #212c63;
     --third-color: #be6934;
     --accent-color: #83a7ca;
     --light-bg: #E6E6EA;
     --light-text-gr: #888b91;
     --black-text: #191919; 
+    /* Text*/
 }
 
 /* --- BODY --- */
 body {
     font-family: var(--font-primary);
-    background-image: linear-gradient(to right bottom, #01030b, #081118, #091a22, #05232a, #012c30);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    min-height: 100vh;
-    color: var(--light-text-gr);
+    color: var(--black-text);
+    background-color: var(--primary-color);
 }
 
 h1 {

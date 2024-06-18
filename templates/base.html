@@ -7,10 +7,10 @@
     <!-- Title of the webpage -->
     <title>NederLearn</title>
 
-    <!-- Linking Google font: Roboto -->
-    <link rel="preconnect" href="<https://fonts.gstatic.com>">
-    <link href="<https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap>"
-        rel="stylesheet">
+    <!-- Linking Google font: EB Garamond, Fira Sans, Playfair Display, Quattrocento Sans -->
+    <link rel="preconnect" href="<https://fonts.googleapis.com>">
+    <link rel="preconnect" href="<https://fonts.gstatic.com>" crossorigin>
+    <link href="<https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap>" rel="stylesheet">
 
     <!-- Setting viewport for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -50,28 +50,17 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <!-- If user is authenticated -->
                     {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'profile' %}">My Profile</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'create_post' %}">Create New Post</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'my_posts' %}">My Posts</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'saved_for_later' %}">Saved for
-                            Later</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'about_us' %}">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'logout' %}">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Create New Post</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Posts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Saved for Later</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Log Out</a></li>
                     <!-- If user is not authenticated -->
                     {% else %}
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'register' %}">Join the Club</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'login' %}">Login</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'about_us' %}">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Join the Club</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">About Us</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -107,3 +96,4 @@
 </body>
 
 </html>
+
