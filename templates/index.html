@@ -16,11 +16,11 @@
                             <div class="image-container">
                                 <!-- Placeholder check for featured image URL -->
                                 {% if "placeholder" in blogpost.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="<https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg>">
+                                <img class="card-img-top img-fluid aspect-ratio-3-2"
+                                src="<https://raw.githubusercontent.com/Blignaut24/NederLearn/main/media/placeholder_images/nederlearn_logo.webp>">
                                 {% else %}
                                 <!-- Display blogpost's featured image -->
-                                <img class="card-img-top"
+                                <img class="card-img-top img-fluid aspect-ratio-3-2"
                                 src=" {{ blogpost.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
