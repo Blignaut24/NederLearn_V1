@@ -25,4 +25,3 @@ class BlogPostList(generic.ListView):
 
     # Set pagination
     paginate_by = 6
-

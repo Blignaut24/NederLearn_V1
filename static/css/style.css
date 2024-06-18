@@ -63,7 +63,7 @@ h3 {
     -moz-box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
 }
 
-.navbar-dark {
+.navbar-dark .navbar-brand {
     color: var(--accent-color);
 }
 

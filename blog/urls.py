@@ -9,5 +9,5 @@ from django.urls import path
 # ---------------------
 # URL pattern for the home page is defined here. When the home route is accessed, the PostList view is rendered.
 urlpatterns = [
-    path("", views.PostList.as_view(), name="home"),
+    path("", views.BlogPostList.as_view(), name="home"),
 ]
